@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 9px;">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinuxBlog</title>
+</head>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: kaiti;
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: content-box !important;
+  }
+
+  html,
+  body {
+    overflow-y: auto;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+</style>
+
+<body>
+  <div id="app"></div>
+  <script type="module" src="./src/main.js"></script>
+</body>
+
+<script>
+  let windowHeight = window.innerHeight;
+
+  let immersed = 0;
+  let ms = (/Html5Plus\/.+\s\(.*(Immersed\/(\d+\.?\d*).*)\)/gi).exec(navigator.userAgent);
+  if (ms && ms.length >= 3) { immersed = parseFloat(ms[2]); }
+
+  if (window.innerWidth > 550) { document.querySelector('html').style.fontSize = window.innerWidth / 50 + 'px'; }
+  let ReturnKey = '';
+</script>
+
+</html>
